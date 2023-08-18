@@ -21,12 +21,12 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   List<dynamic> _page = [
-    HomeUI(),
     AlertListUI(),
+    HomeUI(),
     SummarizeUI(),
     AlertDescriptionUI(),
   ];
-  int _activePage = 0;
+  int _activePage = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +36,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
           index: _activePage,
           height: 60.0,
           items: <Widget>[
-            Icon(Icons.home, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
             Icon(Icons.notifications, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
+            Icon(Icons.home, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
             Icon(Icons.view_list, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
           ],
           backgroundColor: Color.fromRGBO(49, 66, 71, 1),
