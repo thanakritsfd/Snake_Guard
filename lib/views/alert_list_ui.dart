@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:snake_guard/views/alert_description_ui.dart';
 
 class AlertListUI extends StatefulWidget {
   const AlertListUI({super.key});

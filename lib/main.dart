@@ -2,7 +2,6 @@
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:snake_guard/views/alert_description_ui.dart';
 import 'package:snake_guard/views/alert_list_ui.dart';
 import 'package:snake_guard/views/summarize_ui.dart';
 import 'package:snake_guard/views/home_ui.dart';
@@ -24,7 +23,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
     AlertListUI(),
     HomeUI(),
     SummarizeUI(),
-    AlertDescriptionUI(),
   ];
   int _activePage = 1;
 
@@ -34,7 +32,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
         backgroundColor: Color.fromRGBO(49, 66, 71, 1),
         bottomNavigationBar: CurvedNavigationBar(
           index: _activePage,
-          height: 60.0,
           items: <Widget>[
             Icon(Icons.notifications, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
             Icon(Icons.home, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
