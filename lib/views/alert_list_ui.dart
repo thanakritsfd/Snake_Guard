@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors, unused_local_variable, deprecated_member_use
+// ignore_for_file: prefer_const_constructors, unused_local_variable, deprecated_member_use, unused_field, prefer_final_fields
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 // import 'package:snake_guard/views/alert_description_ui.dart';
 
 class AlertListUI extends StatefulWidget {
@@ -13,7 +12,6 @@ class AlertListUI extends StatefulWidget {
 
 class _AlertListUIState extends State<AlertListUI> {
   DateTime date = DateTime.now();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +32,8 @@ class _AlertListUIState extends State<AlertListUI> {
                 ),
                 onPressed: () async {
                   DateTime? newDate = await showDatePicker(
+                    locale: const Locale('en', 'IN'),
+                    // initialEntryMode: DatePickerEntryMode.calendarOnly,
                     context: context,
                     initialDate: date,
                     firstDate: DateTime(2023),
@@ -77,7 +77,9 @@ class _AlertListUIState extends State<AlertListUI> {
                   if (newDate == null) return;
 
                   //if 'OK' => DateTime
-                  setState(() => date = newDate);
+                  setState(
+                    () => date = newDate,
+                  );
                 },
                 icon: Icon(Icons.calendar_today),
                 label: Text(

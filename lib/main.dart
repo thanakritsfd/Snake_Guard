@@ -1,13 +1,24 @@
-// ignore_for_file: prefer_final_fields, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, library_private_types_in_public_api, avoid_unnecessary_containers
+// ignore_for_file: prefer_final_fields, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, library_private_types_in_public_api, avoid_unnecessary_containers, depend_on_referenced_packages
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:snake_guard/views/alert_list_ui.dart';
 import 'package:snake_guard/views/summarize_ui.dart';
 import 'package:snake_guard/views/home_ui.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(MaterialApp(
+    localizationsDelegates: const [
+      GlobalMaterialLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
+    ],
+    supportedLocales: const [
+      Locale('en', 'GB'), // English, UK
+      Locale('ar', 'AE'), // Arabic, UAE
+      Locale('en', 'IN'), // English, India
+    ],
     debugShowCheckedModeBanner: false,
     home: BottomNavBar(),
   ));
