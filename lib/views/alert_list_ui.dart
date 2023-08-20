@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors, unused_local_variable, deprecated_member_use, unused_field, prefer_final_fields
+// ignore_for_file: prefer_const_constructors, unused_local_variable, deprecated_member_use, unused_field, prefer_final_fields, prefer_interpolation_to_compose_strings
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:snake_guard/views/alert_description_ui.dart';
+import 'package:snake_guard/views/alert_description_ui.dart';
+import 'package:snake_guard/model/alert_list.dart';
 
 class AlertListUI extends StatefulWidget {
   const AlertListUI({super.key});
@@ -12,6 +13,42 @@ class AlertListUI extends StatefulWidget {
 
 class _AlertListUIState extends State<AlertListUI> {
   DateTime date = DateTime.now();
+
+  //ตัวแปรเก็บข้อมูลของร้านแต่ละร้านที่เอาไปใช้กับ listview
+  List<AlertList> _alertList = [
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+  ];
+
+  //ตัวแปรเก็บ index เริ่มต้นของ carousel
+  int _carouselCurrentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,6 +126,43 @@ class _AlertListUIState extends State<AlertListUI> {
                     fontSize: MediaQuery.of(context).size.width * 0.06,
                   ),
                 ),
+              ),
+              ListView.separated(
+                shrinkWrap: true,
+                separatorBuilder: (context, index) {
+                  return Divider(
+                    color: Colors.grey[700],
+                  );
+                },
+                itemCount: _alertList.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AlertDescriptionUI(),
+                        ),
+                      );
+                    },
+                    leading: Icon(
+                      Icons.warning,
+                      color: Colors.black,
+                    ),
+                    title: Text(
+                      'ตรวจพบงู!!',
+                      style: GoogleFonts.kanit(),
+                    ),
+                    subtitle: Text(
+                      'เวลา 08:00 น.',
+                      style: GoogleFonts.kanit(),
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.white,
+                    ),
+                  );
+                },
               ),
             ],
           ),
