@@ -44,6 +44,34 @@ class _AlertListUIState extends State<AlertListUI> {
       description: 'ตรวจพบงู!!',
       datetime: DateTime.now(),
     ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
+    AlertList(
+      description: 'ตรวจพบงู!!',
+      datetime: DateTime.now(),
+    ),
   ];
 
   //ตัวแปรเก็บ index เริ่มต้นของ carousel
@@ -127,42 +155,49 @@ class _AlertListUIState extends State<AlertListUI> {
                   ),
                 ),
               ),
-              ListView.separated(
-                shrinkWrap: true,
-                separatorBuilder: (context, index) {
-                  return Divider(
-                    color: Colors.grey[700],
-                  );
-                },
-                itemCount: _alertList.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AlertDescriptionUI(),
-                        ),
-                      );
-                    },
-                    leading: Icon(
-                      Icons.warning,
-                      color: Colors.black,
-                    ),
-                    title: Text(
-                      'ตรวจพบงู!!',
-                      style: GoogleFonts.kanit(),
-                    ),
-                    subtitle: Text(
-                      'เวลา 08:00 น.',
-                      style: GoogleFonts.kanit(),
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.white,
-                    ),
-                  );
-                },
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.8,
+                child: ListView.separated(
+                  padding: MediaQuery.of(context).padding.copyWith(
+                        top: 0,
+                        bottom: 0,
+                      ),
+                  shrinkWrap: true,
+                  separatorBuilder: (context, index) {
+                    return Divider(
+                      color: Colors.grey[700],
+                    );
+                  },
+                  itemCount: _alertList.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AlertDescriptionUI(),
+                          ),
+                        );
+                      },
+                      leading: Icon(
+                        Icons.warning,
+                        color: Colors.black,
+                      ),
+                      title: Text(
+                        'ตรวจพบงู!!',
+                        style: GoogleFonts.kanit(),
+                      ),
+                      subtitle: Text(
+                        'เวลา 08:00 น.',
+                        style: GoogleFonts.kanit(),
+                      ),
+                      trailing: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.white,
+                      ),
+                    );
+                  },
+                ),
               ),
             ],
           ),
