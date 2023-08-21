@@ -42,13 +42,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
         backgroundColor: Color.fromRGBO(49, 66, 71, 1),
         bottomNavigationBar: CurvedNavigationBar(
+          height: 60,
           index: _activePage,
           items: <Widget>[
             Icon(Icons.notifications, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
             Icon(Icons.home, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
             Icon(Icons.view_list, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
           ],
-          backgroundColor: Color.fromRGBO(49, 66, 71, 1),
+          backgroundColor: Color.fromARGB(255, 80, 155, 240),
           color: Colors.black,
           animationDuration: Duration(milliseconds: 300),
           onTap: (index) {
