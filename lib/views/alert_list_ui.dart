@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_local_variable, deprecated_member_use, unused_field, prefer_final_fields, prefer_interpolation_to_compose_strings, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, unused_local_variable, deprecated_member_use, unused_field, prefer_final_fields, prefer_interpolation_to_compose_strings, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:snake_guard/views/alert_description_ui.dart';
@@ -79,20 +79,14 @@ class _AlertListUIState extends State<AlertListUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color.fromARGB(255, 167, 208, 252), Color.fromARGB(255, 80, 155, 240)], // สีเริ่มต้นและสิ้นสุดของการไล่เฉด
-            begin: Alignment.topCenter, // จุดเริ่มต้น (ด้านบนกลาง)
-            end: Alignment.bottomCenter, // จุดสิ้นสุด (ด้านล่างกลาง)
-          ),
-        ),
         child: SingleChildScrollView(
           child: Center(
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.width * 0.15,
+                  height: MediaQuery.of(context).size.width * 0.10,
                 ),
                 ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
@@ -171,7 +165,7 @@ class _AlertListUIState extends State<AlertListUI> {
                     shrinkWrap: true,
                     separatorBuilder: (context, index) {
                       return Divider(
-                        color: Colors.grey[700],
+                        color: Colors.grey[400],
                       );
                     },
                     itemCount: _alertList.length,
@@ -181,7 +175,9 @@ class _AlertListUIState extends State<AlertListUI> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AlertDescriptionUI(),
+                              builder: (context) => AlertDescriptionUI(
+                                alertList: _alertList[index], // ส่งข้อมูล AlertList ไปยังหน้า AlertDescriptionUI
+                              ),
                             ),
                           );
                         },
@@ -203,7 +199,7 @@ class _AlertListUIState extends State<AlertListUI> {
                         ),
                         trailing: Icon(
                           Icons.arrow_forward_ios,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       );
                     },

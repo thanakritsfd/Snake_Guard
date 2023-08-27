@@ -49,7 +49,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             Icon(Icons.home, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
             Icon(Icons.view_list, size: MediaQuery.of(context).size.width * 0.08, color: Colors.white),
           ],
-          backgroundColor: Color.fromARGB(255, 80, 155, 240),
+          backgroundColor: Colors.white,
           color: Colors.black,
           animationDuration: Duration(milliseconds: 300),
           onTap: (index) {

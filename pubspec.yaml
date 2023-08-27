@@ -41,6 +41,7 @@ dependencies:
   dots_indicator: ^3.0.0 #จุดเลื่อนสไลด์
   intl: ^0.18.0 # Format
   curved_navigation_bar: ^1.0.3 #menu bar bottom
+  url_launcher: ^6.1.12 #ทำให้โทรผ่านแอพ เปิดเว็บ เปิด Facebook ส่ง sms
 
 flutter_launcher_icons:
   android: "launcher_icon"
